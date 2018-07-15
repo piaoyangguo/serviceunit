@@ -1,0 +1,73 @@
+#! /bin/sh
+
+x="
+[D:user_new_t][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4]   NEW_TASK
+[D:kw_plz][D:user_new_t][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4] NEW_TASK
+[D:kw_for][D:user_new_w][W:0-10][D:user_new_t][D:user_new_c][D:user_new_n][W:0-4]   NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][W:0-10][D:user_new_t][D:user_new_c][D:user_new_n][W:0-4] NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n]  NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n]    NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n] NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n]   NEW_TASK
+[D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n][W:0-4][D:user_new_w][W:0-3]  NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n][W:0-4][D:user_new_w][W:0-3]    NEW_TASK
+[D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n][W:0-4][D:user_new_w][W:0-3] NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n][W:0-4][D:user_new_w][W:0-3]   NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4][D:user_new_t][W:0-3]    NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4][D:user_new_t][W:0-3]  NEW_TASK
+[D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_t][W:0-4][D:user_new_w][W:0-3]    NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_t][W:0-4][D:user_new_w][W:0-3]  NEW_TASK
+[D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_w][W:0-4][D:user_new_t][W:0-3]    NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_w][W:0-4][D:user_new_t][W:0-3]  NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4] NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_n][W:0-4]   NEW_TASK
+[D:user_new_c][D:kw_for][D:user_new_w][D:kw_de][D:user_new_n][W:0-4]    NEW_TASK
+[D:kw_plz][D:user_new_c][D:kw_for][D:user_new_w][D:kw_de][D:user_new_n][W:0-4]  NEW_TASK
+[D:user_new_c][D:user_new_n][W:0-4][D:user_new_w][W:0-3]    NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_n][W:0-4][D:user_new_w][W:0-3]  NEW_TASK
+[D:user_new_c][W:0-10][D:kw_is][D:user_new_w][D:kw_de][D:user_new_n][W:0-4] NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-10][D:kw_is][D:user_new_w][D:kw_de][D:user_new_n][W:0-4]   NEW_TASK
+[D:user_new_t][D:user_new_c][D:user_new_n][W:0-4]   NEW_TASK
+[D:kw_plz][D:user_new_t][D:user_new_c][D:user_new_n][W:0-4] NEW_TASK
+[D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n][W:0-4]   NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_t][D:kw_done][D:kw_de][D:user_new_n][W:0-4] NEW_TASK
+[D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n][W:0-4]  NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_t][D:kw_de][D:user_new_n][W:0-4]    NEW_TASK
+[D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_t][W:0-3] NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-4][D:user_new_n][W:0-4][D:user_new_t][W:0-3]   NEW_TASK
+[D:user_new_c][W:0-10][D:kw_is][D:user_new_t][D:kw_de][D:user_new_n][W:0-4] NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-10][D:kw_is][D:user_new_t][D:kw_de][D:user_new_n][W:0-4]   NEW_TASK
+[D:user_new_c][W:0-4][D:user_new_n][W:0-3]  NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-4][D:user_new_n][W:0-3]    NEW_TASK
+[D:user_new_t][D:kw_for][D:user_new_w][D:user_new_c][W:0-9][D:user_new_n][W:4-200]  NEW_TASK
+[D:kw_plz][D:user_new_t][D:kw_for][D:user_new_w][D:user_new_c][W:0-9][D:user_new_n][W:4-200]    NEW_TASK
+[D:kw_for][D:user_new_w][W:0-10][D:user_new_t][D:user_new_c][D:user_new_n][W:4-200] NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][W:0-10][D:user_new_t][D:user_new_c][D:user_new_n][W:4-200]   NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][W:4-200][D:kw_de][D:user_new_n]    NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][D:user_new_t][W:4-200][D:kw_de][D:user_new_n]  NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][W:0-10][D:user_new_n][D:kw_sp][W:4-200]  NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][W:0-10][D:user_new_n][D:kw_sp][W:4-200]    NEW_TASK
+[D:user_new_c][D:user_new_t][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:0-4][D:user_new_w][W:0-4]   NEW_TASK
+[D:user_new_c][D:user_new_t][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:4-200]  NEW_TASK
+[D:kw_plz][D:user_new_c][D:user_new_t][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:4-200]    NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][W:4-200][D:kw_de][D:user_new_n]  NEW_TASK
+[D:kw_plz][D:kw_for][D:user_new_w][D:user_new_c][W:4-200][D:kw_de][D:user_new_n]    NEW_TASK
+[D:kw_for][D:user_new_w][D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][D:user_new_t]   NEW_TASK
+[D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:0-4][D:user_new_t][W:0-4] NEW_TASK
+[D:kw_plz][D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:0-4][D:user_new_t][W:0-4]   NEW_TASK
+[D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:0-4][D:user_new_w][W:0-4] NEW_TASK
+[D:kw_plz][D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:0-4][D:user_new_w][W:0-4]   NEW_TASK
+[D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:4-200]    NEW_TASK
+[D:kw_plz][D:user_new_c][W:4-200][D:kw_de][D:user_new_n][D:kw_sp][W:4-200]  NEW_TASK
+[D:user_new_c][W:0-10][D:user_new_n][D:kw_sp][W:4-200]  NEW_TASK
+[D:kw_plz][D:user_new_c][W:0-10][D:user_new_n][D:kw_sp][W:4-200]    NEW_TASK
+[D:user_new_c][W:4-200][D:kw_de][D:user_new_n]  NEW_TASK
+[D:kw_plz][D:user_new_c][W:4-200][D:kw_de][D:user_new_n]    NEW_TASK
+"
+
+echo "$x" | awk '{print $1}' | while read l; do
+    [ -z "$l" ] && continue
+    if ! grep -q -F "$l" new_task.py; then
+        echo "$l"
+    fi
+done
